@@ -60,9 +60,15 @@ function renderItems(items) {
         <span>${safeSource}</span>
       </div>
       <h3><a href="${safeUrl}" target="_blank" rel="noopener noreferrer">${safeTitle}</a></h3>
-      <div class="tags">
-        ${tickers.map(t => `<span class="tag">${t}</span>`).join("")}
-      </div>
+     <div class="tags">
+  ${tickers.map(t => {
+    const link = item.nordnetUrl;
+    return link
+      ? `<a class="tag tag-link" href="${link}" target="_blank" rel="noopener noreferrer">${t}</a>`
+      : `<span class="tag">${t}</span>`;
+  }).join("")}
+</div>
+
     `;
     list.appendChild(card);
   }
