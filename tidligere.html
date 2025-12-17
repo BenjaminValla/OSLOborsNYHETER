@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OsloBørs NEWS – Tidligere</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+  <header class="wrap header">
+    <div>
+      <h1>Tidligere</h1>
+      <p class="muted">Arkiv med søk</p>
+    </div>
+    <nav class="nav">
+      <a href="./index.html">Nå</a>
+      <a class="active" href="./tidligere.html">Tidligere</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <div class="controls">
+      <input id="q" class="input" type="search" placeholder="Søk (tittel, kilde, ticker)..." />
+      <select id="days" class="input">
+        <option value="7">Siste 7 dager</option>
+        <option value="30" selected>Siste 30 dager</option>
+        <option value="180">Siste 180 dager</option>
+        <option value="365">Siste 365 dager</option>
+        <option value="9999">Alle</option>
+      </select>
+    </div>
+
+    <div id="status" class="status">Laster…</div>
+    <section id="list" class="list"></section>
+  </main>
+
+  <footer class="wrap footer">
+    <span class="muted">Tips: legg til nye saker i <code>data/news.json</code></span>
+  </footer>
+
+  <script type="module">
+    import { renderArchive } from "./assets/app.js";
+    renderArchive();
+  </script>
+</body>
+</html>
