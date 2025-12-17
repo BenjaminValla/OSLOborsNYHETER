@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OsloBørs NEWS</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+  <header class="wrap header">
+    <div>
+      <h1>OsloBørs NEWS</h1>
+      <p class="muted">Siste oppdateringer</p>
+    </div>
+    <nav class="nav">
+      <a class="active" href="./index.html">Nå</a>
+      <a href="./tidligere.html">Tidligere</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <div id="status" class="status">Laster…</div>
+    <section id="list" class="list"></section>
+  </main>
+
+  <footer class="wrap footer">
+    <span class="muted">Data fra <code>data/news.json</code></span>
+  </footer>
+
+  <script type="module">
+    import { renderLatest } from "./assets/app.js";
+    renderLatest();
+  </script>
+</body>
+</html>
